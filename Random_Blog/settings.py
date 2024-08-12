@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'Blog',
+    'admindash',
 ]
 
 MIDDLEWARE = [
@@ -56,7 +57,7 @@ ROOT_URLCONF = 'Random_Blog.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR,"template")],
+        'DIRS': [os.path.join(BASE_DIR,"template"),os.path.join(BASE_DIR,"dashtemplate")],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [

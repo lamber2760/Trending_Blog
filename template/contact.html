@@ -53,48 +53,35 @@
                         <li><a class="instagram" href="#"></a></li>
                         <li><a class="lastfm" href="#"></a></li>
                         <li><a class="vine" href="#"></a></li>
-                        <!--<li><a class="rss" href="#"></a></li>
-                        <li><a class="behance" href="#"></a></li>
-                        <li><a class="vimeo" href="#"></a></li>
-                        <li><a class="forrst" href="#"></a></li>
-                        <li><a class="skype" href="#"></a></li>
-                        <li><a class="picasa" href="#"></a></li>
-                        <li><a class="youtube" href="#"></a></li>
-                        <li><a class="flickr" href="#"></a></li>
-                        <li><a class="tumblr" href="#"></a></li>
-                        <li><a class="blogger" href="#"></a></li>
-                        <li><a class="delicious" href="#"></a></li>
-                        <li><a class="digg" href="#"></a></li>
-                        <li><a class="friendfeed" href="#"></a></li>
-                        <li><a class="wordpress" href="#"></a></li>
-                        <li><a class="stack-overflow" href="#"></a></li>
-                        <li><a class="foursquare" href="#"></a></li>
-                        <li><a class="xing" href="#"></a></li>
-                        <li><a class="weibo" href="#"></a></li>
-                        <li><a class="soundcloud" href="#"></a></li>
+                        
                         <li><a class="fivehundredpx" href="#"></a></li>
-                        <li><a class="slideshare" href="#"></a></li>-->
+                        <li><a class="slideshare" href="#"></a></li>
                     </ul>
                     <!-- SOCIAL -->
                     
                     <h3 class="section-title">Or mail me!</h3>
-                      
+                        
                       <!-- .contact-form -->
                       <div class="contact-form">
                         
-                          <form id="contact-form" class="validate-form" method="post" action="https://themes.pixelwars.org/editor-html/send-mail.php" novalidate="novalidate">
+                          <form id="contact-form" class="validate-form" method="POST" action="https://themes.pixelwars.org/editor-html/send-mail.php" novalidate="novalidate">
                             
                             <!-- enter mail subject here -->
                             <input type="hidden" name="subject" id="subject" value="You have a new message from Editor!">
                             
                             <p>
                               <label for="name">NAME</label>
-                              <input type="text" name="name" id="name" class="required" aria-required="true">
+                              <input type="text" name="name" id="name" placeholder="Enter your name " class="required" aria-required="true" required>
                             </p>
                             
                             <p>
                               <label for="email">EMAIL</label>
-                              <input type="text" name="email" id="email" class="required email" aria-required="true">
+                              <input type="email" name="email"  placeholder="Enter your email" id="email" class="required email" aria-required="true" re\>
+                            </p>
+
+                            <p>
+                              <label for="email">PHONE NUMBER</label>
+                              <input type="number" name="phonenumber"  placeholder="Enter your phonenumber" id="phonenumber" class="required email" aria-required="true" re\>
                             </p>
                             
                             <p class="antispam">Leave this empty if you are a human :
@@ -103,7 +90,7 @@
 
                             <p>
                               <label for="message">MESSAGE</label>
-                              <textarea name="message" id="message" class="required" aria-required="true"></textarea>
+                              <textarea name="message" id="message" placeholder="Enter your message" class="required" aria-required="true" required></textarea>
                             </p>
                            
                             <p>

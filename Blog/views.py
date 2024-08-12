@@ -10,12 +10,11 @@ def aboutus(request):
 def contact(request):
     return render(request,"contact.html")
 
-def services(request):
-    return render(request,"services.html")
+def allreview(request):
+    return render(request,"review.html")
 
 def trendingblog(request):
     return render(request,"treanding-blog.html")
-
 def blog(request):
     return render(request,"blog.html")
 def login(request):
