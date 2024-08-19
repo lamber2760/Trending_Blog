@@ -1,5 +1,55 @@
-{% extends "dash.html" %}
+{% extends "dashtemplate/dash.html" %}
 {% block asd %}
+<main class="flex-grow p-6">
+    <div class="flex justify-between items-center mb-6">
+        <h4 class="text-slate-900 dark:text-slate-200 text-lg font-medium">Add Blog</h4>
 
-this is base dash board
+        <div class="md:flex hidden items-center gap-2.5 text-sm font-semibold">
+            <div class="flex items-center gap-2">
+                <a href="#" class="text-sm font-medium text-slate-700 dark:text-slate-400">Chandigarh</a>
+            </div>
+
+            <div class="flex items-center gap-2">
+                <i class="mgc_right_line text-lg flex-shrink-0 text-slate-400 rtl:rotate-180"></i>
+                <a href="#" class="text-sm font-medium text-slate-700 dark:text-slate-400">Menu</a>
+            </div>
+
+            <div class="flex items-center gap-2">
+                <i class="mgc_right_line text-lg flex-shrink-0 text-slate-400 rtl:rotate-180"></i>
+                <a href="#" class="text-sm font-medium text-slate-700 dark:text-slate-400" aria-current="page">Add
+                    blog</a>
+            </div>
+        </div>
+    </div>
+<div style=" padding-top: 48px;padding-left: 39px;" >
+    <form action="" method="POST">
+        {% csrf_token %}
+        <div>
+            <label style="font-size: 40px;">Title  :</label> 
+            <input style="padding-right: 608px;" type="text" placeholder="Enter your title">
+        </div>
+        <br>
+        <div>
+            <label style="font-size: 40px;" >Blog  :</label>
+            <input style="padding-right: 608px;padding-bottom: 189px;" type="text" placeholder="Enter your blog">
+        </div>
+        <br>
+        <div>
+            <label style="font-size: 34px;">Upload Img  :</label>
+            <input  style="padding-right: 400px;" type="file" >
+        </div>
+        <br>
+        <div style="text-align: center;">
+            <button style="background-color: green;" type="submit" class="btn btn-success">Done</button>
+        </div>
+        
+    </form>
+</div>
+</main>
+
 {% endblock asd%}
+
+<!-- <div style="font-size:40px;text-align:center;color: brown;">
+            <button style="background-color: antiquewhite;" type="submit">Done</button>
+     
+        </div> -->
