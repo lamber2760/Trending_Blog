@@ -1,3 +1,3 @@
 from django.contrib import admin
-
-# Register your models here.
+from alldash.models import blogdashboard
+admin.site.register(blogdashboard)

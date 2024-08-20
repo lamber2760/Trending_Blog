@@ -22,21 +22,21 @@
         </div>
     </div>
 <div style=" padding-top: 48px;padding-left: 39px;" >
-    <form action="" method="POST">
+    <form action="/mydash/savedata" method="POST" enctype="multipart/form-data">
         {% csrf_token %}
         <div>
             <label style="font-size: 40px;">Title  :</label> 
-            <input style="padding-right: 608px;" type="text" placeholder="Enter your title">
+            <input style="padding-right: 608px;" name="firsttitle" type="text" placeholder="Enter your title">
         </div>
         <br>
         <div>
             <label style="font-size: 40px;" >Blog  :</label>
-            <input style="padding-right: 608px;padding-bottom: 189px;" type="text" placeholder="Enter your blog">
+            <input style="padding-right: 608px;padding-bottom: 189px;" name="firstblog" type="text" placeholder="Enter your blog">
         </div>
         <br>
         <div>
             <label style="font-size: 34px;">Upload Img  :</label>
-            <input  style="padding-right: 400px;" type="file" >
+            <input  style="padding-right: 400px;" type="file" name="img" >
         </div>
         <br>
         <div style="text-align: center;">
@@ -49,7 +49,3 @@
 
 {% endblock asd%}
 
-<!-- <div style="font-size:40px;text-align:center;color: brown;">
-            <button style="background-color: antiquewhite;" type="submit">Done</button>
-     
-        </div> -->

@@ -2,33 +2,49 @@
 {% block asd %}
 
 <main class="flex-grow p-6">
-    <div class="flex justify-between items-center mb-6">
-        <h4 class="text-slate-900 dark:text-slate-200 text-lg font-medium">Blog</h4>
+  <div class="flex justify-between items-center mb-6">
+    <h4 class="text-slate-900 dark:text-slate-200 text-lg font-medium">Blog</h4>
 
-        <div class="md:flex hidden items-center gap-2.5 text-sm font-semibold">
-            <div class="flex items-center gap-2">
-                <a href="#" class="text-sm font-medium text-slate-700 dark:text-slate-400">Chandigarh</a>
-            </div>
+    <div class="md:flex hidden items-center gap-2.5 text-sm font-semibold">
+      <div class="flex items-center gap-2">
+        <a href="#" class="text-sm font-medium text-slate-700 dark:text-slate-400">Chandigarh</a>
+      </div>
 
-            <div class="flex items-center gap-2">
-                <i class="mgc_right_line text-lg flex-shrink-0 text-slate-400 rtl:rotate-180"></i>
-                <a href="#" class="text-sm font-medium text-slate-700 dark:text-slate-400">Menu</a>
-            </div>
+      <div class="flex items-center gap-2">
+        <i class="mgc_right_line text-lg flex-shrink-0 text-slate-400 rtl:rotate-180"></i>
+        <a href="#" class="text-sm font-medium text-slate-700 dark:text-slate-400">Menu</a>
+      </div>
 
-            <div class="flex items-center gap-2">
-                <i class="mgc_right_line text-lg flex-shrink-0 text-slate-400 rtl:rotate-180"></i>
-                <a href="#" class="text-sm font-medium text-slate-700 dark:text-slate-400" aria-current="page">Blog</a>
-            </div>
-        </div>
+      <div class="flex items-center gap-2">
+        <i class="mgc_right_line text-lg flex-shrink-0 text-slate-400 rtl:rotate-180"></i>
+        <a href="#" class="text-sm font-medium text-slate-700 dark:text-slate-400" aria-current="page">Blog</a>
+      </div>
     </div>
-    <div>
+  </div>
+
+
+  <div>
+    {%for data in mydata%}
+    <div class="row">
+      <div class="col-sm-6 mb-3 mb-sm-0">
         <div class="card">
-             <label>Title Name</label>
-
-             <label>Blog Name</label>
+          <div class="card-body">
+            <img src="/media/{{data.allimg}}" alt="image here" style="max-width: 180px;">
+            <h5 class="card-title">Title Name <span>{{data.title}}</span></h5>
+            <h5 class="card-title">Blog Name <span>{{data.blog}}</span></h5>
+            <div style="display: flex;justify-content: space-around;">
+              <form action="" method="POST">
+                <button style="background-color: green;" type="button" class="btn btn-success">Update</button>
+              </form>
+              <form action="" method="POST">
+                <button style="background-color: red;" type="button" class="btn btn-danger">Delete</button>
+              </form>
+            </div>
           </div>
-          
-          
+        </div>
+      </div>
+      {%endfor%}
     </div>
-</main>    
-{% endblock asd%} 
+
+</main>
+{% endblock asd%}
