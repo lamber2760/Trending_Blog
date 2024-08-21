@@ -2,7 +2,7 @@
 {% block asd %}
 <main style="background-color: rgb(220, 240, 233);" class="flex-grow p-6">
     <div class="flex justify-between items-center mb-6">
-        <h4 class="text-slate-900 dark:text-slate-200 text-lg font-medium">Add Blog</h4>
+        <h4 class="text-slate-900 dark:text-slate-200 text-lg font-medium">Update Blog</h4>
 
         <div class="md:flex hidden items-center gap-2.5 text-sm font-semibold">
             <div class="flex items-center gap-2">
@@ -16,31 +16,31 @@
 
             <div class="flex items-center gap-2">
                 <i class="mgc_right_line text-lg flex-shrink-0 text-slate-400 rtl:rotate-180"></i>
-                <a href="#" class="text-sm font-medium text-slate-700 dark:text-slate-400" aria-current="page">Add
+                <a href="#" class="text-sm font-medium text-slate-700 dark:text-slate-400" aria-current="page">Udate
                     blog</a>
             </div>
         </div>
     </div>
 <div style=" padding-top: 48px;padding-left: 39px;" >
-    <form action="/mydash/savedata" method="POST" enctype="multipart/form-data">
+    <form action="/mydash/now-update/{{meandata.id}}" method="POST" enctype="multipart/form-data">
         {% csrf_token %}
         <div>
             <label style="font-size: 40px;">Title  :</label> 
-            <input style="padding-right: 608px; background-color: rgb(203, 199, 193);" name="firsttitle" type="text" placeholder="Enter your title"required>
+            <input style="padding-right: 608px;background-color: rgb(203, 199, 193);" value="{{meandata.title}}" name="firsttitle" type="text" placeholder="Enter your title " required>
         </div>
         <br>
         <div>
             <label style="font-size: 40px;" >Blog  :</label>
-            <input style="padding-right: 608px;padding-bottom: 189px;background-color: rgb(203, 199, 193);" name="firstblog" type="text" placeholder="Enter your blog"required>
+            <input style="padding-right: 608px;padding-bottom: 189px;background-color: rgb(203, 199, 193);" value="{{meandata.blog}}" name="firstblog" type="text" placeholder="Enter your blog" required>
         </div>
         <br>
         <div>
             <label style="font-size: 34px;">Upload Img  :</label>
-            <input  style="padding-right: 400px;background-color: rgb(203, 199, 193);" type="file" name="img"required >
+            <input  style="padding-right: 400px;background-color: rgb(203, 199, 193);" type="file" value="{{meandata.allimg}}"  name="img"  required>
         </div>
         <br>
         <div style="text-align: center;">
-            <button style="background-color: green;" type="submit" class="btn btn-success">Done</button>
+            <button style="background-color: green;" type="submit" class="btn btn-success">Update Done</button>
         </div>
         
     </form>

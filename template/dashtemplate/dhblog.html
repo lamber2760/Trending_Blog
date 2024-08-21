@@ -1,7 +1,7 @@
 {% extends "dashtemplate/dash.html" %}
 {% block asd %}
 
-<main class="flex-grow p-6">
+<main  style="background-color: rgb(220, 240, 233);" class="flex-grow p-6">
   <div class="flex justify-between items-center mb-6">
     <h4 class="text-slate-900 dark:text-slate-200 text-lg font-medium">Blog</h4>
 
@@ -22,29 +22,38 @@
     </div>
   </div>
 
-
-  <div>
+ <div>
     {%for data in mydata%}
-    <div class="row">
+    {{data.allimg}}
+    {{data.id}}
+    <div  class="row">
       <div class="col-sm-6 mb-3 mb-sm-0">
-        <div class="card">
+        <div style="background-color: plum;" class="card">
           <div class="card-body">
             <img src="/media/{{data.allimg}}" alt="image here" style="max-width: 180px;">
-            <h5 class="card-title">Title Name <span>{{data.title}}</span></h5>
-            <h5 class="card-title">Blog Name <span>{{data.blog}}</span></h5>
-            <div style="display: flex;justify-content: space-around;">
-              <form action="" method="POST">
-                <button style="background-color: green;" type="button" class="btn btn-success">Update</button>
-              </form>
-              <form action="" method="POST">
-                <button style="background-color: red;" type="button" class="btn btn-danger">Delete</button>
-              </form>
-            </div>
+            <h5 class="card-title">Title   :  <span>   {{data.title}}</span></h5>
+            <h5 class="card-title">Blog    : <span>   {{data.blog}}</span></h5>
           </div>
+          <div style="display: flex;justify-content: space-evenly;flex-wrap: nowrap;">
+
+            <form action="/mydash/update/{{data.id}}" method="POST">
+              <button style="background-color: green;" type="submit" class="btn btn-success">Update</button>
+              {% csrf_token %}
+            </form>
+
+
+            <form action="/mydash/delete/{{data.id}}" method="POST">
+              {% csrf_token %}
+              <button style="background-color: red;" type="submit" class="btn btn-danger">Delete</button>
+            </form>
+          </div> 
         </div>
       </div>
-      {%endfor%}
     </div>
-
+    {%endfor%}
+  </div>
 </main>
 {% endblock asd%}
+
+
+

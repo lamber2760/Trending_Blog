@@ -21,9 +21,30 @@ def allsavedata(request):
         usertitle = request.POST.get("firsttitle")
         userblog  = request.POST.get("firstblog")
         allimg = request.FILES.get("img")
-        data = blogdashboard(title = usertitle, blog = userblog,  myimg=allimg)
+        data = blogdashboard(title = usertitle, blog = userblog,  myimg = allimg)
         data.save()
     
-    return redirect("dhblog")
+    return redirect("review")
+
+def deletedata(request,kgf):
+    mydata  = blogdashboard.objects.get(id=kgf)
+    mydata.delete()
+    return redirect("review")
+def updatedata(request,asd):
+    data = blogdashboard.objects.get(id =asd)
+    return render(request,"dashtemplate/updatedhblog.html",{"meandata":data})
+def nowudatedata(request,up):
+    if request.method == "POST":
+        usertitle = request.POST.get("firsttitle")
+        userblog  = request.POST.get("firstblog")
+        userimg = request.FILES.get("img")
+        my__data = blogdashboard.objects.get(id=up)
+        my__data.title = usertitle
+        my__data.blog = userblog
+        my__data.allimg = userimg
+        my__data.save()
+    return redirect("review")    
+        
+
 
 
